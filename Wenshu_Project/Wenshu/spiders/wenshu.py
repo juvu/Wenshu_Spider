@@ -12,9 +12,9 @@ class WenshuSpider(scrapy.Spider):
         super().__init__(**kwargs)
         self.year_list = ['1996', '1997', '1998', '1999', '2000']
         self.guid = 'aaaabbbb-aaaa-aaaabbbb-aaaabbbbcccc'
-        with open('Wenshu\spiders\get_vl5x.js', encoding='utf-8') as f:
+        with open('Wenshu/spiders/get_vl5x.js', encoding='utf-8') as f:
             jsdata_1 = f.read()
-        with open('Wenshu\spiders\get_docid.js', encoding='utf-8') as f:
+        with open('Wenshu/spiders/get_docid.js', encoding='utf-8') as f:
             jsdata_2 = f.read()
         self.js_1 = execjs.compile(jsdata_1)
         self.js_2 = execjs.compile(jsdata_2)
