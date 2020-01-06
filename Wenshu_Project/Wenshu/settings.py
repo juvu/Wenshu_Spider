@@ -87,11 +87,16 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
+'''DOWNLOADER_MIDDLEWARES = {
     # 'Wenshu.middlewares.WenshuDownloaderMiddleware': 543,
     'scrapy.downloadermiddlewares.retry.RetryMiddleware': 200,
     'Wenshu.middlewares.ProxyMiddleware': 300,
     'Wenshu.middlewares.RandomUserAgentMiddleware': 1,
+}'''
+
+DOWNLOADER_MIDDLEWARES = {
+    'Wenshu.middlewares.WenshuDownloaderMiddleware': 543,
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
 }
 
 # Enable or disable extensions
